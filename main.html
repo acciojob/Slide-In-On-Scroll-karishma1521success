@@ -66,7 +66,9 @@
 
              if(imgBottomHeight == window.innerHeight-10){
                 img.classList.remove('active');
-             }
+             }else{
+				 img.classList.add('active');
+			 }
 	  }
 
 	 window.addEventListener('scroll' , debounce(implementScroll));
