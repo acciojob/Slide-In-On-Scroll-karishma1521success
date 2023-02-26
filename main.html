@@ -62,11 +62,15 @@
 	  function implementScroll(){
 		  let imgElements = document.getElementsByClassName('slide-in');
           imgElements.forEach((img){
-			  if(img.offsetTop > img.offsetBottom){
+			  let visibleHeight =  window.innerHeight - img.height;
+			  if( img.offsetTop > 0 && img.offsetTop <= visibleHeight){
 				  img.classList.add('active');
-			  }else{
+			  }
+          let   disappearHeight =  window.innerHeight - img.height/3;
+			  if(img.offsetBottom >= disappearHeight){
 				  img.classList.remove('active');
 			  }
+			  
 		  }
 	  }
 
