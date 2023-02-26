@@ -58,6 +58,22 @@
       };
     }
 
+
+	  function implementScroll(){
+		  let imgElements = document.getElementsByClassName('slide-in');
+          imgElements.forEach((img) => {
+            if(img.offsetTop > img.height){
+                img.classList.add('active');
+            }else{
+                img.classList.remove('active');
+            }
+
+             
+          })
+	  }
+
+	 window.addEventListener('scroll' , debounce(implementScroll));
+
   </script>
 
   <style>
