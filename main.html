@@ -61,14 +61,13 @@
 
 	  function implementScroll(){
 		  let imgElements = document.getElementsByClassName('slide-in');
-          imgElements.forEach((img) => {
-               let imgBottomHeight = window.innerHeight -  (img.offsetTop + img.height);
-
-             if(imgBottomHeight == window.innerHeight-10){
-                img.classList.remove('active');
-             }else{
-				 img.classList.add('active');
-			 }
+          imgElements.forEach((img){
+			  if(img.offsetTop > img.offsetBottom){
+				  img.classList.add('active');
+			  }else{
+				  img.classList.remove('active');
+			  }
+		  }
 	  }
 
 	 window.addEventListener('scroll' , debounce(implementScroll));
